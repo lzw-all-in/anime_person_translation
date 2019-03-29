@@ -3,10 +3,11 @@
 ### 基本说明
 
 1. 代码中主要尝试了2种框架 [cycleGAN](<https://arxiv.org/abs/1703.10593>) 和 [DTN](<https://arxiv.org/abs/1611.02200>) 但是DTN的效果太差甚至跑不起来
-2. 尝试了各种优化方式比如：[WGAN](<https://arxiv.org/abs/1701.07875>) [WGAN-GP](<https://arxiv.org/abs/1704.00028v3>) [SN](<https://arxiv.org/abs/1802.05957>) 最后得出结论虽然SN好与前两者，但是存在很严重的mode collapse的问题，就是无论输入什么样的人脸输出的动漫脸都是同一张
+2. 尝试了各种优化方式比如：[WGAN](<https://arxiv.org/abs/1701.07875>) 、[WGAN-GP](<https://arxiv.org/abs/1704.00028v3>) 、[SN](<https://arxiv.org/abs/1802.05957>) 最后得出结论虽然SN好与前两者，但是存在很严重的mode collapse的问题，就是无论输入什么样的人脸输出的动漫脸都是同一张。虽然WGAN能跑起来也朝着自己想要的方向发展但是WGAN真的跑的太慢了>_<，40轮和80轮变化微小还跑了整整一天 ==\，不光是每个epoch的耗时更长而且模型收敛的也很慢啊～～～～
 3. 最后在cycleGAN的框架之上采用了[self-attention GAN](<https://arxiv.org/abs/1805.08318>) 才最终解决问题，也就是我的最终版本
-4. 数据集 人脸数据是 [CelebA](https://pan.baidu.com/s/17h5f2eOGSTr_iabmSOA2Iw) ，动漫脸数据是 [知乎上有人已经爬取下来的](<https://pan.baidu.com/s/1eSifHcA>) 密码：g5qa
-5. 所有图片在实际运行时都转化为脸64x64的尺寸，最终的模型训练了200轮
+4. 数据集：人脸数据是 [CelebA](https://pan.baidu.com/s/17h5f2eOGSTr_iabmSOA2Iw) ，动漫脸数据是 [知乎上有人已经爬取下来的](<https://pan.baidu.com/s/1eSifHcA>) 密码：g5qa
+5. 所有图片在实际运行时都转化为脸64x64的尺寸，最终的模型训练了200轮。自己借了同学实验室4张K20的显卡来跑(表示没有显卡完全搞不动深度学习//(ㄒoㄒ)//)跑了3天多吧(自己记得没错的话)。
+6. 整个cycleGAN框架的代码很大一部分是来源于[论文源码](<https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix>)，自己在其基础上进行修改的，虽然很想说是自己写的，不过还是应该感谢一下原论文的作者！b（￣▽￣）d
 
 ### 文件说明
 
